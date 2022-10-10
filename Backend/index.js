@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const database = require('./modules/database-module');
-const clienteRouter = require('./routes/cliente-router');
+const usuarioRouter = require('./routes/usuario-router');
 
 const app = express();
 puerto = 7777;
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 
 //Rutas
-app.use('/usuario', clienteRouter);
+app.use('/usuario', usuarioRouter);
 
 
 
