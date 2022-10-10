@@ -10,4 +10,4 @@ var esquema = new mongoose.Schema({
         direccion: String
 });
 
-module.exports = mongoose.model('usuarios', esquema);
+module.exports = mongoose.model('clientes', esquema);

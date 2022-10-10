@@ -1,10 +1,5 @@
 const mongoose = require('mongoose');
-//const {MongoClient} = require('mongodb');
-//const client = new MongoClient('mongodb+srv://alfonsosevilla_25:admin@pnuevohogar.0tfb0s2.mongodb.net/?retryWrites=true&w=majority');
-
-let bd = 'Nuevo_Hogar';
-let puerto = '27017';
-let host = 'localhost';
+const URL = 'mongodb+srv://hjiovanny1:admin@pnuevohogar.0tfb0s2.mongodb.net/pnuevohogar?retryWrites=true&w=majority';
 
 class Database{
     constructor(){
@@ -12,8 +7,8 @@ class Database{
     }
 
     conectar(){
-        mongoose.connect(`mongodb://${host}:${puerto}/${bd}`)
-        .then(resultado=>console.log('Se conectó a Mongodb'))
+        mongoose.connect(URL, {useNewUrlParser: true, useUnifiedTopology: true})
+        .then(resultado=>console.log('Se conectó a Mongodb Atlas'))
         .catch(error=>console.log(error));
     }
 }
