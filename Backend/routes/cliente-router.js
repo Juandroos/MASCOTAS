@@ -47,5 +47,18 @@ router.get('/', async (req, res) =>{
     res.send(clientes);
 })
 
-//
+//GET - Cambio de contraseña
+router.put('/changePassword', async (req, res) =>{
+    const {correo, contrasenia} = req.body;
+    const user = await cliente.findOne({correo})
+    if(!user) return res.status(401).send('Correo incorrecto');
+    const clienteNuevo = {
+        contrasenia: contrasenia,
+    }
+    await Cliente.findByIdAndUpdate(req.params,correo, clienteNuevo, {useFindAndModify: false});
+    res.json({
+        status: 'contraseña actualizada'
+    });
+    return res.status(200).json(user);
+})
 module.exports = router;

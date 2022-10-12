@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function RememberPassword() {
+export default function ChangePassword() {
   return (
-    <div>Esto es recordar contraseña</div>
+    <div>Esto es cambiar contraseña</div>
   )
 }
