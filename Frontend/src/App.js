@@ -5,7 +5,7 @@ import Presentacion from "./Componentes/Presentacion";
 import Galeria from "./Componentes/Galeria";
 import Layout from "./Componentes/Layout";
 import LoginPage from "./Componentes/LoginPage";
-
+import ChangePassword from "./Componentes/ChangePassword";
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
             <Galeria/>
       </Layout>}/>
       <Route path='/login' element={<LoginPage/>}/>
+      <Route path='/changepassword' element={<ChangePassword/>}/>
         </Routes>
       </BrowserRouter>
   );
