@@ -7,6 +7,7 @@ import Layout from "./Componentes/Layout";
 import LoginPage from "./Componentes/LoginPage";
 import ChangePassword from "./Componentes/ChangePassword";
 import Registro from "./Componentes/registro/Registro";
+import Confirmacion from './Componentes/confirmacion/Confirmacion';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path='/login' element={<LoginPage/>}/>
       <Route path='/changepassword' element={<ChangePassword/>}/>
       <Route path='/registro' element={<Registro/>}/>
+      <Route path='/confirmacion' element={<Confirmacion/>}/>
         </Routes>
       </BrowserRouter>
   );
