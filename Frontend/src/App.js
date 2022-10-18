@@ -9,6 +9,7 @@ import ChangePassword from "./Componentes/ChangePassword";
 import Registro from "./Componentes/registro/Registro";
 import Confirmacion from './Componentes/confirmacion/Confirmacion';
 import Historial from "./Componentes/Historial";
+import CambiarContrasena from './Componentes/cambioContrasena/CambiarContrasena';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path='/registro' element={<Registro/>}/>
       <Route path='/confirmacion' element={<Confirmacion/>}/>
       <Route path='/historial' element={<Historial/>}/>
+      <Route path='/cambiarContrasena' element={<CambiarContrasena/>}/>
         </Routes>
       </BrowserRouter>
   );
