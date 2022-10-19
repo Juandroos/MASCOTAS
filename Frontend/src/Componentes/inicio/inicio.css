@@ -1,16 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap');
+
 .div-inicio{
-    width: 100vw;
-    height: 100vh;
-    background: rgb(2,0,36);
+    margin: 0%;
+   /*  background: rgb(2,0,36);
     background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(30,68,125,1) 0%, rgba(32,114,158,1) 55%, rgba(35,164,193,1) 78%, rgba(31,243,250,1) 96%);
     background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(30,68,125,1) 0%, rgba(32,114,158,1) 55%, rgba(35,164,193,1) 78%, rgba(31,243,250,1) 96%);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(30,68,125,1) 0%, rgba(32,114,158,1) 55%, rgba(35,164,193,1) 78%, rgba(31,243,250,1) 96%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#1ff3fa",GradientType=1);
-
+ */
+ background: rgb(0,0,0);
+ background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 100%);
+ background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 100%);
+ background: linear-gradient(90deg, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
 }
-
+.row{
+    margin: 0%!important;
+}
 .div-izq{
     padding: 25px;
+    /* position: absolute; */
 }
 .div-center{
     padding: 25px;
@@ -25,8 +34,59 @@
     margin-right: auto;
 }
 .fondo-logo{
-    background-color: rgba(255, 255, 255, 0.63);
-    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.075);
+    border-radius: 205px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.lista-color{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    font-weight:lighter;
+    font-size: 25px;
+    font-family: 'Maven Pro', sans-serif;
+    padding-left: 30px;
+}
+.lista-act{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    font-weight:lighter;
+    font-size: 15px;
+    font-family: 'Maven Pro', sans-serif;
+    padding-left: 30px;
+}
+
+.font-icon{
+    padding-right: 20px;
+}
+.img-icon{
+    border-radius: 25px;
+}
+.logo-user{
+    width: 60px;
+}
+
+.lista-color:hover{
+    background-color: rgb(218, 107, 33);
+    color: black;
+    border-radius: 25px;
+}
+.lista-act:hover{
+    background-color: rgba(230, 167, 125, 0.281);
+    color: black;
+    border-radius: 25px;
+}
+.color-card{
+    background-color: rgba(255, 255, 255, 0.062);
+    color: azure;
+}
+.img-mascotas{
+    width: 100%;
+    height: 200px;
+    display: block;
+    object-fit:scale-down;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 240, 223, 0.336);
 }
