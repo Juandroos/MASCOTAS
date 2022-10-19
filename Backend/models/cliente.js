@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
 
 var esquema = new mongoose.Schema({
-        nombre: String,
-        apellido: String,
+        nombre: {type: String, required: true},
+        identidad: {type: String, required: true},
+        direccion: {type: String, required: true},
+        sexo: {type: String, required: true},
         fechaNacimiento: mongoose.SchemaTypes.Mixed,
-        correo: String,
-        telefono: String,
-        contrasenia: String,
-        direccion: String
+        celular: {type: String, required: true},
+        telefono: {type: String, required: true},
+        correo: {type: String, required: true},
+        contrasenia: {type: String,required: true},
+        creacion: {type: Date, default: Date.now},
+        modificacion: {type: Date, default: Date.now}
 });
 
 module.exports = mongoose.model('clientes', esquema);
