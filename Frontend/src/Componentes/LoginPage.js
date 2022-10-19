@@ -125,7 +125,7 @@ class LoginPage extends Component{
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="./registro" variant="body2">
+                <Link href="./sign-up" variant="body2">
                   {"No tiene cuenta? Registrate"}
                 </Link>
               </Grid>
