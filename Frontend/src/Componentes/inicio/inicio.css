@@ -1,0 +1,32 @@
+.div-inicio{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(2,0,36);
+    background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(30,68,125,1) 0%, rgba(32,114,158,1) 55%, rgba(35,164,193,1) 78%, rgba(31,243,250,1) 96%);
+    background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(30,68,125,1) 0%, rgba(32,114,158,1) 55%, rgba(35,164,193,1) 78%, rgba(31,243,250,1) 96%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(30,68,125,1) 0%, rgba(32,114,158,1) 55%, rgba(35,164,193,1) 78%, rgba(31,243,250,1) 96%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#1ff3fa",GradientType=1);
+
+}
+
+.div-izq{
+    padding: 25px;
+}
+.div-center{
+    padding: 25px;
+}
+.div-der{
+    padding: 25px;
+}
+.logo-inicio{
+    width: 50%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fondo-logo{
+    background-color: rgba(255, 255, 255, 0.63);
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
