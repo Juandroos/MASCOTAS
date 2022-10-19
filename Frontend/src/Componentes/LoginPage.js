@@ -120,12 +120,12 @@ class LoginPage extends Component{
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href= "./ChangePassword" variant="body2">
+                <Link href= "./cambiarContrasena" variant="body2">
                   Cambiar contraseña?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="./registro" variant="body2">
+                <Link href="./sign-up" variant="body2">
                   {"No tiene cuenta? Registrate"}
                 </Link>
               </Grid>

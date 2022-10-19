@@ -23,8 +23,8 @@ const ListaComponentes =() => {
         </List>
         <br/>
         <br/>
-        <Button variant="outlined" color="primary">Iniciar Sesion</Button>
-        <Button variant="outlined" color="secondary">Registrarse</Button>
+        <Button variant="outlined" color="primary" href="./login" >Iniciar Sesion</Button>
+        <Button variant="outlined" color="secondary" href="./registro" >Registrarse</Button>
       </>
     )
 }
