@@ -12,7 +12,7 @@ import Registro from "./Componentes/registro/Registro";
 import Confirmacion from './Componentes/confirmacion/Confirmacion';
 import Historial from "./Componentes/Historial";
 import CambiarContrasena from './Componentes/cambioContrasena/CambiarContrasena';
-
+import Inicio from "./Componentes/inicio/Inicio";
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
       <Route path='/confirmacion' element={<Confirmacion/>}/>
       <Route path='/historial' element={<Historial/>}/>
       <Route path='/cambiarContrasena' element={<CambiarContrasena/>}/>
+      <Route path='/inicio' element={<Inicio/>}/>
        </Routes>
       </Router>
 
