@@ -8,22 +8,11 @@ function Footer() {
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-          Unete a nuestra familia y brindale un hogar lleno de amor
+          UNETE A NUESTRA FAMILIA Y BRINDA UN HOGAR LLENO DE AMOR
         </p>
         <p className='footer-subscription-text'>
-          Deja una huella como ellos
+          DEJA UNA HUELLA COMO ELLOS
         </p>
-        <div className='input-areas'>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
-          </form>
-        </div>
       </section>
       
       <section class='social-media'>

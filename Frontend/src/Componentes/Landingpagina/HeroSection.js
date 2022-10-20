@@ -15,16 +15,10 @@ function HeroSection() {
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
+
+ 
         >
           INICIAR SESION
-        </Button>
-        <Button
-          className='btns'
-          buttonStyle='btn--primary'
-          buttonSize='btn--large'
-          onClick={console.log('hey')}
-        >
-          REGISTRARSE <i className='far fa' />
         </Button>
       </div>
     </div>
