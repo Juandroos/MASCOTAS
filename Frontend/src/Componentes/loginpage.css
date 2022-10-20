@@ -1,9 +1,9 @@
-.div-historial{
+.div-loginpage{
     margin-top: -0.25cm;
     background-color: rgb(37, 37, 37);
     height: 100vh;
     width: "inherit";
-    background-image: url("../../src/Fotos/fondohistorial.jpg");
+    background-image: url("../../src/Fotos/fondologin.jpg");
     background-repeat:no-repeat;
     background-size: cover;
     background-attachment: fixed;

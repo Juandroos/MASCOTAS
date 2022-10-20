@@ -19,7 +19,23 @@ import Max from "../Fotos/Max.png"
 import BugsLola from "../Fotos/BugsLola.jpg"
 import PanaRabbit from "../Fotos/PanaRabbit.jpeg"*/
 
- 
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
 export default function Historial() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -39,29 +55,29 @@ export default function Historial() {
     setAnchorElUser(null);
   };
 
-  function Copyright() {
-    return (
-      <Typography variant="body2" color="text.secondary" align="center">
-        {'Copyright © '}
-        <Link color="inherit" href="http://localhost:3000/">
-          Nuevo Hogar
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
-
-  const cards = [1, 2, 3];
-
-  const theme = createTheme();
+  //Pie de pagina para el copyright
+function Copyright(props) {
   return (
-    <div className="containe-fluid div-historial" bgcolor="transparent">
+    <Typography variant="body2" color= "white" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="http://localhost:3000/">
+      NuevoHogar
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+  const cards = [1, 2, 3,4];
+  return (
+    <div className="containe-fluid div-historial" >
         <div>
-        <div bgcolor="transparent">
+        
         <Box
+        
             sx={{ mt: 1 }}>
-               <ThemeProvider theme={theme}>
+               
       <CssBaseline />
       <main>
         {/* Hero unit */}
@@ -83,59 +99,50 @@ export default function Historial() {
               Historial de Mascotas
             </Typography>
           </Container>
+          
         </Box>
-        <Container sx={{ py: 0 }} maxWidth="md" >
+        <ThemeProvider theme={theme}>
+        <Container sx={{ py: 0  }} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={3} >
+          <Grid container spacing={3}>
             {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card} xs={12} sm={6} md={3}>
                 <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column',bgcolor:"transparent" }}
+                  sx={{ maxWidth:345}}
                 >
                   <CardMedia
                     component="img"
                     sx={{
-                      // 16:9
-                      pt: '56.25%',
+                      height:140
                     }}
                     image = {Kiara}
                     alt="random"
                   />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
+                  <CardContent sx={{ flexGrow: 1, bgcolor:'black'}} >
+                    <Typography gutterBottom variant="h5" component="h2" color="white">
                       Nombre de Mascota
                     </Typography>
-                    <Typography>
+                    <Typography color="white">
                       Descripción
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small">ver</Button>
-                    <Button size="small">editar</Button>
+                  <CardActions sx={{bgcolor:'black'}}>
+                    <Button size="small" color="secondary">ver</Button>
+                    <Button size="small" color="secondary">editar</Button>
                   </CardActions>
                 </Card>
               </Grid>
             ))}
           </Grid>
         </Container>
+        </ThemeProvider>
       </main>
       {/* Footer */}
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-        </Typography>
-        <Copyright />
-      </Box>
+      <Copyright sx={{ mt: 8, mb: 4 }} />
       {/* End footer */}
-    </ThemeProvider>  
+   
             </Box>
-        </div>
+              
         </div>
     </div>
   )

@@ -9,14 +9,31 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Banner from './Banner';
 import Grid from '@mui/material/Grid';
+import './loginpage.css';
 
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#171717',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
 
 //Pie de pagina para el copyright
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography variant="body2" color="white" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="http://localhost:3000/">
       NuevoHogar
@@ -26,9 +43,6 @@ function Copyright(props) {
     </Typography>
   );
 }
-
-
-const theme = createTheme();
 
 class LoginPage extends Component{
  
@@ -66,8 +80,9 @@ class LoginPage extends Component{
  
  render(){
   return (
+  <div className="containe-fluid div-loginpage" bgcolor="transparent">
     <ThemeProvider theme={theme}>
-      <Banner/>
+      
       <Container component="main" maxWidth="xs">
         <CssBaseline />
        {/* Inicio de caja */}
@@ -88,6 +103,7 @@ class LoginPage extends Component{
               required
               fullWidth
               id="email"
+              bgcolor="white"
               label="Correo electronico"
               name="correo"
               onChange={this.handleChange}
@@ -135,6 +151,7 @@ class LoginPage extends Component{
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
+    </div>
   )
         }
 }
