@@ -1,5 +1,6 @@
 const express = require('express');
 const cliente = require('../models/cliente');
+const correoModule = require('../modules/correo-module');
 const router = express.Router();
 
 
@@ -9,25 +10,32 @@ router.post('/register', (req, res)=>{
     let user= new cliente(
         {
             nombre: req.body.nombre,
-            apellido: req.body.apellido,
+            identidad: req.body.identidad,
+            direccion: req.body.direccion,
+            sexo: req.body.sexo,
             fechaNacimiento: {
                 dia: req.body.dia,
                 mes: req.body.mes,
                 anio: req.body.anio},
+            celular: req.body.celular,
             telefono: req.body.telefono,
             correo: req.body.correo,
             contrasenia: req.body.contrasenia,
-            direccion: req.body.direccion
+            
         }
-    ); 
+    );
+// Funcion Enviar correo
+    correoModule.enviarCorreo(req.body.correo, req.body.nombre); 
+    
     user.save().then(resultado=>{
         res.send({mensaje:'registro guardado', cliente: user});
-        res.end();
+        res.end();     
     }).catch(error=>{
         res.send(error);
         res.end();
     })
     
+       
 })
 
 

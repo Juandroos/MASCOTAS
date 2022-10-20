@@ -4,9 +4,10 @@ const cors = require('cors');
 const database = require('./modules/database-module');
 const clienteRouter = require('./routes/cliente-router');
 
+require('dotenv').config();
 const app = express();
-puerto = 7777;
 
+app.set('puerto', process.env.PORT || 7777);
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
@@ -24,6 +25,6 @@ app.use('/cliente', clienteRouter);
 
 
 
-app.listen(puerto, ()=>{
-    console.log(`Servidor Backend del Centro de Adopción Nuevo Hogar escuchando al puerto:${puerto}. Abra el navegador en: http://localhost:${puerto}/`);
+app.listen(app.get('puerto'), ()=>{
+    console.log(`Servidor Backend del Centro de Adopción Nuevo Hogar escuchando al puerto:${app.get('puerto')}. Abra el navegador en: http://localhost:${app.get('puerto')}/`);
 });

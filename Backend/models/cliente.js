@@ -8,7 +8,7 @@ var esquema = new mongoose.Schema({
         fechaNacimiento: mongoose.SchemaTypes.Mixed,
         celular: {type: String, required: true},
         telefono: {type: String, required: true},
-        correo: {type: String, required: true},
+        correo: {type: String, required: true, unique: true},
         contrasenia: {type: String,required: true},
         creacion: {type: Date, default: Date.now},
         modificacion: {type: Date, default: Date.now}
