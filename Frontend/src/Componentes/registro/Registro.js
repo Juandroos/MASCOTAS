@@ -138,6 +138,8 @@ const Registro = () => {
                             <div className="col-6 mt-5 text-center margen-centrado">Al hacer clic en "Regístrate", aceptaras las 
                             <a href="home"> CONDICIONES GENERALES DE USO</a> y la <a href="home">POLÍTICA DE PRIVACIDAD</a></div>
                             {/* <button className="btn btn-lg btn-success mt-4 col-6 button-registro" onClick={registro}>Regístrate</button> */}
+                            
+                            <button className="btn btn-lg btn-success mt-4 col-6 button-registro" onClick={registro}>Regístrate</button> 
                         </div>
 
                     </form>
