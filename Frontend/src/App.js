@@ -13,6 +13,9 @@ import Confirmacion from './Componentes/confirmacion/Confirmacion';
 import Historial from "./Componentes/Historial";
 import CambiarContrasena from './Componentes/cambioContrasena/CambiarContrasena';
 import Inicio from "./Componentes/inicio/Inicio";
+import InformacionPersonal from "./Componentes/informacionPersonal/InformacionPersonal";
+import EditarInfoPersonal from './Componentes/editarInfoPersonal/EditarInfoPersonal';
+
 
 function App() {
   return (
@@ -32,6 +35,8 @@ function App() {
       <Route path='/historial' element={<Historial/>}/>
       <Route path='/cambiarContrasena' element={<CambiarContrasena/>}/>
       <Route path='/inicio' element={<Inicio/>}/>
+      <Route path='/informacionPersonal' element ={<InformacionPersonal/>}/>
+      <Route path='/editarInfoPersonal' element ={<EditarInfoPersonal/>}/>
        </Routes>
       </Router>
 
