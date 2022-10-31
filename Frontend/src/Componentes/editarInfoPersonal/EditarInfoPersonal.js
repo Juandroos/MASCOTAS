@@ -24,7 +24,7 @@ const EditarInfoPersonal = () => {
                 </ul>
                 </div>
                 <div className="col-6 div-center-info">
-                    <h2 className="text-center m-4 txt-white">Información Personal</h2>
+                    <h2 className="text-center m-4 txt-white">Editar Información Personal</h2>
                 <form>
                         <div className="mb-4 row">
                             <label htmlFor="nombre" className="col-sm-4 col-form-label fw-bold">Nombre Completo:
