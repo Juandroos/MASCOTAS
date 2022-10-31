@@ -2,8 +2,6 @@ import React from "react"
 import "./informacionPersonal.css"
 import logo from '../../Fotos/Favicon.png';
 import img from '../../Fotos/Kiara.jpg';
-import pet1 from '../../Fotos/Magnus.jpeg'
-import pet2 from '../../Fotos/Max.png'
 
 const InformacionPersonal = () => {
     return(
@@ -123,6 +121,9 @@ const InformacionPersonal = () => {
                     </li>
                     <li class="list-group-item lista-act">Accesibilidad
                         <p className="card-text"><small className="text-muted">A los diferentes  servicio</small></p>
+                    </li>
+                    <li class="list-group-item lista-act">Cambio de Constraseña
+                        <p className="card-text"><small className="text-muted">Modificar la constraseña actual.</small></p>
                     </li>
                     <li class="list-group-item lista-act">Enviar Comentario
                         <p className="card-text"><small className="text-muted">Alguna sugerencia</small></p>
