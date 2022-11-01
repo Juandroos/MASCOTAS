@@ -1,6 +1,6 @@
 const nodeMailer = require('nodemailer');
 
-function enviarCorreo(correo, nombre){
+const enviarCorreo = (correo, nombre)=>{
 
     let transporter = nodeMailer.createTransport({
         service: 'gmail',
