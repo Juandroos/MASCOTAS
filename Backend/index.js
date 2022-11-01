@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const database = require('./modules/database-module');
+
 const clienteRouter = require('./routes/cliente-router');
+const mascotaRouter = require('./routes/mascota-router');
 
 require('dotenv').config();
 const app = express();
@@ -16,6 +18,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 //Rutas
 app.use('/cliente', clienteRouter);
+app.use('/mascota', mascotaRouter);    
 
 
 
