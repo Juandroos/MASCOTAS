@@ -6,33 +6,33 @@ import "./nuevaActividad.css"
 const NuevaActividad = () => {
     // const historial = useHistory()
 
-    const [ usuario, setUsuario] = useState({
-        nombre:"",
-        identidad:"",
+    const [ actividad, setactividad] = useState({
+        titulo:"",
+        resumen:"",
         direccion:"",
-        sexo:"",
-        fNacimiento:"",
+        descripcion:"",
+        fecha:"",
         celular:"",
-        telFijo:"",
+        organizador:"",
         correoElectronico:"",
-        password:""
+        beneficio:""
     });  
 
     const handleChange = e =>{
         const {name, value} = e.target
-        setUsuario({
-            ...usuario,
+        setactividad({
+            ...actividad,
             [name]:value
         })
     }
 
     const url ="http://localhost:9002/"
     const registro = () =>{
-        const {nombre, identidad, direccion, sexo, fNacimiento, celular, telFijo, correoElectronico, password} = usuario
+        const {titulo, resumen, direccion, descripcion, fecha, celular, organizador, correoElectronico, beneficio} = actividad
         
-        if( nombre &&  identidad && direccion && sexo && fNacimiento && celular && correoElectronico && password){
+        if( titulo &&  resumen && direccion && descripcion && fecha && celular && correoElectronico && beneficio){
             console.log("Enviada")
-            // axios.post(url+"registro", usuario).then(res=> console.log(res))
+            // axios.post(url+"registro", actividad).then(res=> console.log(res))
         }else{
             console.log("La informacion no es valida")
         }
@@ -41,29 +41,29 @@ const NuevaActividad = () => {
 
     return (
         <div className="containe-fluid div-master">
-            {/* {console.log("Usuario", usuario)} */}
+            {/* {console.log("actividad", actividad)} */}
             <div className="row div-row">
                 <div className="col-8 div-formulario">
-                    <h2 className="text-center mb-2"> ¿Listo para suscribirte? </h2>
-                    <h6 className="text-center mb-5">¿Ya tienes una cuenta con nosotros? 
+                    <h2 className="text-center mb-2"> Crear una Actividad </h2>
+                    <h6 className="text-center mb-5"> Las mismas seran desarrolladas para ayudar la casa Hogar
                     {/* <p className="text-danger" onClick={() => historial.push("/login")}>INICIAR SESIÓN</p> */}
                     </h6>
                     <form>
                         <div className="mb-4 row">
-                            <label htmlFor="nombre" className="col-sm-4 col-form-label fw-bold">Nombre Completo:
+                            <label htmlFor="titulo" className="col-sm-4 col-form-label fw-bold">Titulo del Evento:
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> * </abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="nombre" value={usuario.nombre} type="text" className="form-control input-registro" id="nombre" placeholder="Jose Trinidad Reyes"  onChange={ handleChange }></input>
+                                <input name="titulo" value={actividad.titulo} type="text" className="form-control input-actividad" id="titulo" placeholder="Caminata de Mascotas"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
                         <div className="mb-4 row">
-                            <label htmlFor="identidad" className="col-sm-4 col-form-label fw-bold">N. Identidad <abbr title="Documento Nacional de Identificacion"> DNI </abbr>:
+                            <label htmlFor="resumen" className="col-sm-4 col-form-label fw-bold">Resumen:
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> * </abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="identidad" value={usuario.identidad} type="text" className="form-control input-registro" id="identidad" placeholder="0808 1996 00004"  onChange={ handleChange }></input>
+                                <input name="resumen" value={actividad.resumen} type="text" className="form-control input-actividad" id="resumen" placeholder="Colecta de Alimentos"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
@@ -72,47 +72,47 @@ const NuevaActividad = () => {
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> *</abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="direccion" value={usuario.direccion} type="text" className="form-control input-registro" id="direccion" placeholder="Col. Universidad Norte, segunda calle"  onChange={ handleChange }></input>
+                                <input name="direccion" value={actividad.direccion} type="text" className="form-control input-actividad" id="direccion" placeholder="Col. Universidad Norte, segunda calle"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
                         <div className="mb-4 row">
-                            <label htmlFor="sexo" className="col-sm-4 col-form-label fw-bolder">Sexo:
+                            <label htmlFor="descripcion" className="col-sm-4 col-form-label fw-bolder">Descripcion de Area:
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> *</abbr>
                             </label>
                             <div className="col-sm-8">
-                                <select className="form-select input-registro" id="sexo" name="sexo" value={usuario.sexo}  onChange={ handleChange }>
+                                <select className="form-select input-actividad" id="descripcion" name="descripcion" value={actividad.descripcion}  onChange={ handleChange }>
                                     <option hidden>Selecciona una opcion</option>
-                                    <option value="1">Hombre</option>
-                                    <option value="2">Mujer</option>
-                                    <option value="3">Prefiero no decirlo</option>
+                                    <option value="1">Campo abierto</option>
+                                    <option value="2">Techada</option>
+                                    <option value="3">Mixta</option>
                                 </select>
 
                             </div>
                         </div>
 
                         <div className="mb-4 row">
-                            <label htmlFor="fNacimiento" className="col-sm-4 col-form-label fw-bolder">Fecha Nacimiento:
+                            <label htmlFor="fecha" className="col-sm-4 col-form-label fw-bolder">Fecha del evento:
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> *</abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="fNacimiento" value={usuario.fNacimiento} type="date" className="form-control input-registro" id="fNacimiento"  onChange={ handleChange }></input>
+                                <input name="fecha" value={actividad.fecha} type="date" className="form-control input-actividad" id="fecha"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
                         <div className="mb-4 row">
-                            <label htmlFor="celular" className="col-sm-4 col-form-label fw-bolder">Telefono Celular:
+                            <label htmlFor="celular" className="col-sm-4 col-form-label fw-bolder">Telefono del organizador:
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> *</abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="celular" value={usuario.celular} type="text" className="form-control input-registro" id="celular" placeholder="9844-4518"  onChange={ handleChange }></input>
+                                <input name="celular" value={actividad.celular} type="text" className="form-control input-actividad" id="celular" placeholder="9844-4518"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
                         <div className="mb-4 row">
-                            <label htmlFor="telFijo" className="col-sm-4 col-form-label fw-bolder">Telefono Fijo:</label>
+                            <label htmlFor="organizador" className="col-sm-4 col-form-label fw-bolder">Organizador del evento:</label>
                             <div className="col-sm-8">
-                                <input name="telFijo" value={usuario.telFijo} type="text" className="form-control input-registro" id="telFijo" placeholder="2244-6567"  onChange={ handleChange }></input>
+                                <input name="organizador" value={actividad.organizador} type="text" className="form-control input-actividad" id="organizador" placeholder="Ricardo Maduro"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
@@ -121,25 +121,24 @@ const NuevaActividad = () => {
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> *</abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="correoElectronico" value={usuario.correoElectronico} type="text" className="form-control input-registro" id="correoElectronico" placeholder="juan@correo.com"  onChange={ handleChange }></input>
+                                <input name="correoElectronico" value={actividad.correoElectronico} type="text" className="form-control input-actividad" id="correoElectronico" placeholder="juan@correo.com"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
                         <div className="mb-3 row">
-                            <label htmlFor="password" className="col-sm-4 col-form-label fw-bolder">Password
+                            <label htmlFor="beneficio" className="col-sm-4 col-form-label fw-bolder">Beneficio de:
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> *</abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="password" value={usuario.password} type="password" className="form-control input-registro" id="password" placeholder="Alf4bet0-" onChange={ handleChange }></input>
+                                <input name="beneficio" value={actividad.beneficio} type="beneficio" className="form-control input-actividad" id="beneficio" placeholder="Nuestro Hogar de Mascotas" onChange={ handleChange }></input>
                             </div>
                         </div>
 
                         <div className="text-center">
-                            <div className="col-6 mt-5 text-center margen-centrado">Al hacer clic en "Regístrate", aceptaras las 
-                            <a href="home"> CONDICIONES GENERALES DE USO</a> y la <a href="home">POLÍTICA DE PRIVACIDAD</a></div>
+                            <div className="col-6 mt-5 text-center margen-centrado">Al hacer clic en "Guardar actividad"</div>
                             {/* <button className="btn btn-lg btn-success mt-4 col-6 button-registro" onClick={registro}>Regístrate</button> */}
                             
-                            <button className="btn btn-lg btn-success mt-4 col-6 button-registro" onClick={registro}>Regístrate</button> 
+                            <button className="btn btn-lg btn-success mt-4 col-6 button-registro" onClick={registro}>Guardar Actividad</button> 
                         </div>
 
                     </form>
