@@ -1,0 +1,43 @@
+.div-master{
+    background-color: rgb(170, 236, 236);
+    background-image: url("../../../public/fondo-pets.jpg");
+    width: 100%;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+}
+.div-row{
+    margin: 0%!important;
+}
+
+.div-formulario{
+    margin: 35px;
+    background-color: rgba(0, 0, 0, 0.671);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding: 4%;
+    color: aliceblue;
+}
+.abbr-obligatoria{
+    color: red;
+    text-decoration: none!important;
+}
+.button-registro{
+    margin-left: auto!important;
+    margin-right: auto!important;
+    display: inline-block;
+    text-align: center!important;
+    border-radius: 25px;
+}
+.margen-centrado{
+    margin: 0 auto;
+}
+.text-transparent{
+    color: rgba(240, 248, 255, 0);
+}
+.input-registro{
+    height: 50px!important;
+    margin: 10px;
+}

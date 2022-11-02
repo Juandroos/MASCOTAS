@@ -16,6 +16,7 @@ import Inicio from "./Componentes/inicio/Inicio";
 import InformacionPersonal from "./Componentes/informacionPersonal/InformacionPersonal";
 import EditarInfoPersonal from './Componentes/editarInfoPersonal/EditarInfoPersonal';
 import Nuevamascota from './Componentes/nuevaMascota/Nuevamascota';
+import NuevaActividad from './Componentes/nuevaActividad/NuevaActividad';
 
 function App() {
   return (
@@ -36,7 +37,8 @@ function App() {
       <Route path='/inicio' element={<Inicio/>}/>
       <Route path='/informacionPersonal' element ={<InformacionPersonal/>}/>
       <Route path='/editarInfoPersonal' element ={<EditarInfoPersonal/>}/>
-      <Route path='/nuevamascota' element ={<Nuevamascota/>}/>
+      <Route path='/nuevamascota' element ={<Nuevamascota/>}/>      
+      <Route path='/nuevaActividad' element ={<NuevaActividad/>}/>
        </Routes>
       </Router>
 
