@@ -100,3 +100,15 @@
     font-weight: bold;
     /*box-shadow: inset 0 3px 8px rgba(0,0,0,.4);*/
   }
+
+
+.foto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.foto img{
+  height: 200px;
+}
