@@ -15,14 +15,14 @@ router.post('/agregar', (req, res)=>{
     let activity= new actividad(
          {
 
-                tituloevento: req.body.tituloevento,
+                titulo: req.body.titulo,
                 resumen: req.body.resumen,
                 direccion: req.body.direccion,
                 descripcion: req.body.descripcion,
-                fechaevento: req.body.fechaevento,
-                telefono: req.body.telefono,
+                fecha: req.body.fecha,
+                celular: req.body.celular,
                 organizador: req.body.organizador,
-                correoelectronico: req.body.correoelectronico,
+                correoElectronico: req.body.correoElectronico,
                 beneficio: req.body.beneficio     
             }
         );
