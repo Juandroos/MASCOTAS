@@ -5,6 +5,7 @@ const database = require('./modules/database-module');
 
 const clienteRouter = require('./routes/cliente-router');
 const mascotaRouter = require('./routes/mascota-router');
+const actividadRouter = require('./routes/actividad-router');
 
 require('dotenv').config();
 const app = express();
@@ -18,15 +19,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 //Rutas
 app.use('/cliente', clienteRouter);
-app.use('/mascota', mascotaRouter);    
-
-
-
-// app.get('/', function(req, res){
-//     res.send('Aquí corresponde al landing page');
-// });
-
-
+app.use('/mascota', mascotaRouter);
+app.use('/actividad', actividadRouter);   
 
 app.listen(app.get('puerto'), ()=>{
     console.log(`Servidor Backend del Centro de Adopción Nuevo Hogar escuchando al puerto:${app.get('puerto')}. Abra el navegador en: http://localhost:${app.get('puerto')}/`);

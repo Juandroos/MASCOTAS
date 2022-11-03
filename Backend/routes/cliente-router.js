@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const cliente = require('../models/cliente');
 const correoModule = require('../modules/correo-module');
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
 const router = express.Router();
 
 
@@ -63,15 +63,50 @@ router.get('/', async (req, res) =>{
 //GET - Cambio de contraseña
 router.put('/changePassword', async (req, res) =>{
     const {correo, contrasenia} = req.body;
-    const user = await cliente.findOne({correo})
+    const user = await cliente.findOne({correo: correo})
     if(!user) return res.status(401).send('Correo incorrecto');
     const clienteNuevo = {
-        contrasenia: contrasenia,
+        contrasenia: contrasenia
     }
-    await cliente.findByIdAndUpdate(req.params,correo, clienteNuevo, {useFindAndModify: false});
+    await cliente.findByIdAndUpdate({correo: correo}, clienteNuevo, {useFindAndModify: false});
     res.json({
         status: 'contraseña actualizada'
     });
     return res.status(200).json(user);
 })
+
+//GET - Obtener informacion cliente
+router.get('/informacionPersonal/:id', async (req, res) =>{
+    await cliente.find({_id: req.params.id}).then(result=>{
+        res.send(result);
+        res.end();
+    }).catch(error=>{
+        res.send(error);
+        res.end();
+    })
+
+})
+
+//PUT - Actualizar informacion cliente
+router.put('/editarInfoPersonal/:id', async (req, res) =>{
+    await cliente.updateOne({
+        _id: req.params.id
+    },
+    {   nombre: req.body.nombre,
+        identidad: req.body.identidad,
+        direccion: req.body.direccion,
+        sexo: req.body.sexo,
+        fechaNacimiento: req.body.fechaNacimiento,
+        celular: req.body.celular,
+        telefono: req.body.telefono,
+        correo: req.body.correo
+    }).then(result=>{
+        res.send(result);
+        res.end();
+    }).catch(error=>{
+        res.send(error);
+        res.end();
+    })
+})
+
 module.exports = router;
