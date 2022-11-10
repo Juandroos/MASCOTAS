@@ -17,6 +17,8 @@ import InformacionPersonal from "./Componentes/informacionPersonal/InformacionPe
 import EditarInfoPersonal from './Componentes/editarInfoPersonal/EditarInfoPersonal';
 import Nuevamascota from './Componentes/nuevaMascota/Nuevamascota';
 import NuevaActividad from './Componentes/nuevaActividad/NuevaActividad';
+import ModificarMascota from './Componentes/modificarMascota/ModificarMascota';
+import ModificarActividad from './Componentes/modificarActividad/ModificarActividad';
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
       <Route path='/editarInfoPersonal' element ={<EditarInfoPersonal/>}/>
       <Route path='/nuevamascota' element ={<Nuevamascota/>}/>      
       <Route path='/nuevaActividad' element ={<NuevaActividad/>}/>
+      <Route path='/modificaractividad' element ={<ModificarActividad/>}/>
+      <Route path='/modificarmascota' element ={<ModificarMascota/>}/>
        </Routes>
       </Router>
 
