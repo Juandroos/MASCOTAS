@@ -7,7 +7,7 @@ var esquema = new mongoose.Schema({
           sexo:                {type: String, required: true},
           descripcion:         {type: String, required: true},
           imagen:              {type: String},
-          fechaActualizacion:  {type: Date, default: Date.now}
+          fechaActualizacion:  {type: Date}
 });
 
 module.exports = mongoose.model('mascotas', esquema);

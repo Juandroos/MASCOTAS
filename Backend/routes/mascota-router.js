@@ -31,4 +31,26 @@ router.post('/agregar', (req, res)=>{
      })
 })
 
+//PUT - Actualizar informacion cliente
+router.put('/actualizar/:id', async (req, res) =>{
+     await mascota.updateOne({
+          _id: req.params.id
+     },
+     {    nombre: req.body.nombre,
+          edad: req.body.edad,
+          raza: req.body.raza,
+          sexo: req.body.sexo,
+          descripcion: req.body.descripcion,
+          imagen: req.body.imagen,
+          fechaActualizacion: new Date()
+     }).then(result=>{
+          res.send(result);
+          res.end();
+     }).catch(error=>{
+          res.send(error);
+          res.end();
+     })
+})
+
+
 module.exports = router;
