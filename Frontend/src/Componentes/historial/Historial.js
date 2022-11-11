@@ -36,6 +36,19 @@ const theme = createTheme({
     },
   },
 });
+
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="white" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="http://localhost:3000/">
+      NuevoHogar
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 export default function Historial() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -55,29 +68,13 @@ export default function Historial() {
     setAnchorElUser(null);
   };
 
-  //Pie de pagina para el copyright
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color= "white" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="http://localhost:3000/">
-      NuevoHogar
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
   const cards = [1, 2, 3,4];
   return (
-    <div className="containe-fluid div-historial" >
-        <div>
-        
+    <div className="containe-fluid div-historial" bgcolor="transparent">
         <Box
-        
+          marginTop={25}
             sx={{ mt: 1 }}>
-               
+              
       <CssBaseline />
       <main>
         {/* Hero unit */}
@@ -90,6 +87,7 @@ function Copyright(props) {
         >
           <Container maxWidth="md"  >
             <Typography
+            marginTop={4}
               component="h1"
               variant="h4"
               align="center"
@@ -136,14 +134,12 @@ function Copyright(props) {
           </Grid>
         </Container>
         </ThemeProvider>
-      </main>
+      
       {/* Footer */}
       <Copyright sx={{ mt: 8, mb: 4 }} />
       {/* End footer */}
-   
-            </Box>
-              
+      </main>
+            </Box> 
         </div>
-    </div>
   )
 }

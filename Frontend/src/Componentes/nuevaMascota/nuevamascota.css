@@ -1,9 +1,9 @@
 .div-crearmascota{
     margin-top: -1.70cm;
     background-color: rgb(37, 37, 37);
-    height: 100vh;
-    width: "inherit";
-    background-image: url("../../Fotos/fondo_nuevamascota_edit.jpg");
+    height: 100%;
+    width: 100%;
+    background-image: url("../../Fotos/fondo_nuevamascota.jpg");
     background-repeat:no-repeat;
     background-size: cover;
     background-attachment: fixed;
