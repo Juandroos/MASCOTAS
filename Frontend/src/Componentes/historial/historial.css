@@ -1,8 +1,8 @@
 .div-historial{
     margin-top: -0.25cm;
     background-color: transparent;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: "inherit";
     background-image: url("../../Fotos/fondohistorial.jpg");
     background-repeat:no-repeat;
     background-size: cover;
