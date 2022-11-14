@@ -1,9 +1,9 @@
 import React from "react"
-import "./colaboradoresLista.css"
+import "./colaboradorBuscar.css"
 import logo from '../../Fotos/Favicon.png';
 import img from '../../Fotos/Kiara.jpg';
 
-const ColaboradoresLista = () => {
+const ColaboradorBuscar = () => {
     return(
         
         <div className="containe-fluid div-inicio">
@@ -22,7 +22,14 @@ const ColaboradoresLista = () => {
                 </ul>
                 </div>
                 <div className="col-6 div-center-info">
-                    <h2 className="text-center m-4 txt-white">Colaboradores</h2>
+                    <h2 className="text-center m-4 txt-white">Busca y agregar colaboradores</h2>
+
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="buscar">Buscar</span>
+                        <input type="text" class="form-control" placeholder="juan1alejandro1@gmail.com" aria-label="Sizing example input" id="buscar" aria-describedby="buscar"/>
+                    </div>
+                    <br/>
+
                     {/* Card 1 */}
                     <div class="card">
                         <div class="card-header bg-secondary">
@@ -31,38 +38,14 @@ const ColaboradoresLista = () => {
                         <div class="card-body bg-black">
                             <blockquote class="blockquote mb-0">
                             <p>juan1alejandro1@gmail.com</p>
-                            <footer class="blockquote-footer">Colaborador <cite title="Source Title"> Activo </cite></footer>
-                            </blockquote>
+                            <footer class="blockquote-footer">Colaborador <cite title="Source Title"> Inactivo </cite></footer>
+                            </blockquote><br/>
+                            <button type="button" class="btn btn-info button-agregar-colaborador">Agregar Colaborador</button>
                         </div>
                     </div>
                     
                     <br/>
-                    {/* Card 2 */}
-                    <div class="card">
-                        <div class="card-header bg-secondary">
-                        Roberto Carlos Mas Gálvez
-                        </div>
-                        <div class="card-body bg-black">
-                            <blockquote class="blockquote mb-0">
-                            <p>roberto1carlos1@gmail.com</p>
-                            <footer class="blockquote-footer">Colaborador <cite title="Source Title"> Activo </cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-
-                    <br/>
-                    {/* Card 3 */}
-                    <div class="card">
-                        <div class="card-header bg-secondary">
-                        Jiovanny Francisco Morales Hernández
-                        </div>
-                        <div class="card-body bg-black">
-                            <blockquote class="blockquote mb-0">
-                            <p>jiovanny11francisco1@gmail.com</p>
-                            <footer class="blockquote-footer">Colaborador <cite title="Source Title"> Activo </cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
+                    
                 </div>
 
                 
@@ -99,4 +82,4 @@ const ColaboradoresLista = () => {
     )
 }
 
-export default ColaboradoresLista
+export default ColaboradorBuscar
