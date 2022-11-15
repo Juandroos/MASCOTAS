@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -13,6 +13,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Kiara from "../../Fotos/Kiara.jpg";
 import './historial.css';
+import Mascotas from '../pages/Mascotas';
 /*import Img_historial from './Img_historial';
 import Magnus from "../Fotos/Magnus.jpeg"
 import Max from "../Fotos/Max.png"
@@ -50,6 +51,32 @@ function Copyright(props) {
   );
 }
 export default function Historial() {
+  const [mascotas, setPersons] = useState([
+    {
+      id: 1,
+      nombre: "Kevin",
+      descripcion: "Frontend Developer",
+      img: "https://bootdey.com/img/Content/avatar/avatar2.png",
+    },
+    {
+      id: 2,
+      nombre: "Alex",
+      descripcion: "Backend Developer",
+      img: "https://bootdey.com/img/Content/avatar/avatar3.png",
+    },
+    {
+      id: 3,
+      nombre: "Ben",
+      descripcion: "Designer",
+      img: "https://bootdey.com/img/Content/avatar/avatar4.png",
+    },
+    {
+      id: 4,
+      nombre: "David",
+      descripcion: "Designer 1",
+      img: "https://bootdey.com/img/Content/avatar/avatar5.png",
+    },
+  ]);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -68,7 +95,6 @@ export default function Historial() {
     setAnchorElUser(null);
   };
 
-  const cards = [1, 2, 3,4];
   return (
     <div className="containe-fluid div-historial" bgcolor="transparent">
         <Box
@@ -103,8 +129,8 @@ export default function Historial() {
         <Container sx={{ py: 0  }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={3}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={3}>
+            {mascotas.map((mascotas) => (
+              <Grid item key={mascotas.id} xs={12} sm={6} md={3}>
                 <Card
                   sx={{ maxWidth:345}}
                 >
@@ -113,20 +139,19 @@ export default function Historial() {
                     sx={{
                       height:140
                     }}
-                    image = {Kiara}
+                    image = {mascotas.img}
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1, bgcolor:'black'}} >
                     <Typography gutterBottom variant="h5" component="h2" color="white">
-                      Nombre de Mascota
+                      {mascotas.nombre}
                     </Typography>
                     <Typography color="white">
-                      Descripción
+                      {mascotas.descripcion}
                     </Typography>
                   </CardContent>
                   <CardActions sx={{bgcolor:'black'}}>
                     <Button size="small" color="secondary">ver</Button>
-                    <Button size="small" color="secondary">editar</Button>
                   </CardActions>
                 </Card>
               </Grid>
