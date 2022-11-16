@@ -99,7 +99,8 @@ router.put('/editarInfoPersonal/:id', async (req, res) =>{
         fechaNacimiento: req.body.fechaNacimiento,
         celular: req.body.celular,
         telefono: req.body.telefono,
-        correo: req.body.correo
+        correo: req.body.correo,
+        modificacion: new Date()
     }).then(result=>{
         res.send(result);
         res.end();

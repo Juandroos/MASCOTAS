@@ -13,8 +13,8 @@ const app = express();
 app.set('puerto', process.env.PORT || 7777);
 app.use(cors());
 app.use(express.json());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb', extended:true}));
 
 
 //Rutas

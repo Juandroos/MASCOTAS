@@ -50,6 +50,40 @@ const theme = createTheme({
 
 export default function ModificarActividad() {
 
+  // Captura de la informacion d ela mascota y Conexion a la base de datos
+  const handleSubmit = (event) => {
+    const data = new FormData(event.currentTarget);
+    const actividad = {
+      titulo: data.get('titulo'),
+      resumen: data.get('resumen'),
+      direccion: data.get('direccion'),
+      descripcion: data.get('descripcion'),
+      fecha: data.get('fecha'),
+      celular: data.get('celular'),
+      organizador: data.get('organizador'),
+      correoElectronico: data.get('correoElectronico'),
+      beneficio: data.get('beneficio')
+    }
+    // console.log(mascota)
+    
+    fetch("http://localhost:7777/actividad/editarInfoActividad/:id", {
+      method: 'PUT',
+      body: JSON.stringify(actividad),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+      })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      alert(data.mensaje)
+      window.location.href = "./modificaractividad"; 
+    })
+    .catch(res => console.log(res));
+    event.preventDefault();
+  };
+
   return (
     <div className="containe-fluid div-modificaractividad">
     <ThemeProvider theme={theme}>
@@ -66,7 +100,7 @@ export default function ModificarActividad() {
             <Typography component="h1" variant="h7">
             Modificar Actividad
           </Typography>
-          <Box component="form" noValidate sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
               <Grid container spacing={2} >
                 <Grid item xs={12}>
                   <TextField
@@ -174,7 +208,7 @@ export default function ModificarActividad() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-              >Guardar actividad</Button>
+              >Actualizar actividad</Button>
             </Box>
           </Box>
         </Container>

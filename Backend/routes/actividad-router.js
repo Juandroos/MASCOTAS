@@ -34,7 +34,43 @@ router.post('/agregar', (req, res)=>{
             res.send(error);
             res.end();
         })
-  })
+})
+
+//GET Obtener una actividad  
+router.get('/informacionActividad/:id', async (req, res) =>{
+    await actividad.find({_id: req.params.id}).then(result=>{
+        res.send(result);
+        res.end();
+    }).catch(error=>{
+        res.send(error);
+        res.end();
+    })
+
+})
+
+//PUT - Actualizar informacion actividad
+router.put('/editarInfoActividad/:id', async (req, res) =>{
+    await actividad.updateOne({
+        _id: req.params.id
+    },
+    {   titulo: req.body.titulo,
+        resumen: req.body.resumen,
+        direccion: req.body.direccion,
+        descripcion: req.body.descripcion,
+        fecha: req.body.fecha,
+        celular: req.body.celular,
+        organizador: req.body.organizador,
+        correoElectronico: req.body.correoElectronico,
+        beneficio: req.body.beneficio,
+        fechaActualizacion: new Date()
+    }).then(result=>{
+        res.send(result);
+        res.end();
+    }).catch(error=>{
+        res.send(error);
+        res.end();
+    })
+})
   
   module.exports = router;
      
