@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,8 +9,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './modificarMascota.css';
-import photo from '../../Fotos/pet2.png'
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
@@ -49,8 +46,8 @@ function Copyright(props) {
 
 export default function ModificarMascota() {
   // Aqui se guardara el base64 de la imagen de la mascota
-  const [imagen, setimagen] = useState("");
-  let abrirModal = false
+  const pet = JSON.parse(localStorage.getItem('mascota'));
+  const [imagen, setimagen] = useState(pet.imagen);
 
 
   // Capturar Imagen y convertirla a Base64
@@ -63,7 +60,7 @@ export default function ModificarMascota() {
     setimagen(reader.result)
     }    };
 
-  // Captura de la informacion d ela mascota y Conexion a la base de datos
+  // Actualizacion de la informacion de la mascota y Conexion a la base de datos
   const handleSubmit = (event) => {
     const data = new FormData(event.currentTarget);
     const mascota = {
@@ -75,9 +72,10 @@ export default function ModificarMascota() {
       imagen: imagen
     }
     // console.log(mascota)
+    // event.preventDefault();
     
-    fetch("http://localhost:7777/mascota/agregar", {
-      method: 'POST',
+    fetch(`http://localhost:7777/mascota/actualizar/${pet._id}`, {
+      method: 'PUT',
       body: JSON.stringify(mascota),
       headers: {
         'Accept': 'application/json',
@@ -88,17 +86,22 @@ export default function ModificarMascota() {
     .then(data => {
       console.log(data)
       alert(data.mensaje)
-      window.location.href = "./nuevamascota"; 
+      window.location.href = "./mascotasAdmin"; 
     })
     .catch(res => console.log(res));
     event.preventDefault();
   };
 
+  const atras = () =>{
+    localStorage.clear();
+    window.location.href = "./mascotasAdmin";
+  }
+
   return (
     <div className="containe-fluid div-modificarmascota">
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
-          <CssBaseline />
+          <CssBaseline/>
           <Box
             sx={{
               marginTop: 8,
@@ -106,92 +109,111 @@ export default function ModificarMascota() {
               flexDirection: 'column',
               alignItems: 'center',
             }}
-          >
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-              <Grid container spacing={2} >
-                <Grid item xs={12}>
-                  <TextField
-                    autoComplete="given-name"
-                    variant='filled'
-                    name="nombre"
-                    required
-                    fullWidth
-                    id="Nuevo Nombre"
-                    label="Nuevo Nombre"
-                    autoFocus
-                  />
-                </Grid>
-                <Grid item xs={12} >
-                  <TextField 
-                    variant='filled'
-                    name="edad"
-                    required
-                    fullWidth
-                    id="Nueva Edad"
-                    label="Nueva Edad"
-                    autoFocus
-                  />
-                </Grid>
-                <Grid item xs={12} >
-                  <TextField 
-                    variant='filled'
-                    name="raza"
-                    required
-                    fullWidth
-                    id="Nueva Raza"
-                    label="Nueva Raza"
-                    autoFocus
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField 
-                    variant='filled'
-                    name="sexo"
-                    required
-                    fullWidth
-                    id="Nuevo sexo"
-                    label="Nuevo sexo"
-                    autoFocus
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    autoComplete="given-name"
-                    variant='filled'
-                    name="descripcion"
-                    required
-                    multiline
-                    rows={4}
-                    fullWidth
-                    id=" Nueva Descripción"
-                    label="Nueva Descripción"
-                    autoFocus
-                  />
-                </Grid>
-              <Grid  item xs={12} >
-              <div className="container-fluid">
-        <br></br>
-    
+            >
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                <Grid container spacing={2} >
 
-        {/* VIEW IMAGES */}
-        <div className="foto">
-            <img src={imagen || photo}></img><br></br>
-            {/* INPUT IMAGES */}
-            <label className="btn btn-warning">
-              <span>Cambiar foto</span>
-              <input hidden type="file" multiple onChange={changeInput}></input>
-            </label>
-        </div>
+                  {/* IMAGEN */}
+                  <Grid  item xs={12} >
+                    <div className="container-fluid">
+                    <br></br>
+                      {/* VIEW IMAGES */}
+                      <div className='fotoPerfil' >
+                          <img className="fotoPerfil" src={imagen}></img><br></br>
+                          {/* INPUT IMAGES */}
+                          <label className="btn btn-warning">
+                            <span>Cambiar foto</span>
+                            <input hidden type="file" multiple onChange={changeInput}></input>
+                          </label>
+                      </div>
+                    </div>
+                  </Grid>
 
-      </div>
-              </Grid>
-              </Grid>
-              <Button 
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >Modificar mascota</Button>
+                  <Grid item xs={12}>
+                    <TextField
+                      autoComplete="given-name"
+                      variant="outlined"
+                      defaultValue={pet.nombre}
+                      name="nombre"
+                      required
+                      fullWidth
+                      id="Nuevo Nombre"
+                      label="Nombre"
+                      autoFocus
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} >
+                    <TextField 
+                      variant="outlined"
+                      defaultValue={pet.edad}
+                      name="edad"
+                      required
+                      fullWidth
+                      id="Nueva Edad"
+                      label="Nueva Edad"
+                      autoFocus
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} >
+                    <TextField 
+                      variant="outlined"
+                      defaultValue={pet.raza}
+                      name="raza"
+                      required
+                      fullWidth
+                      id="Nueva Raza"
+                      label="Nueva Raza"
+                      autoFocus
+                    />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <TextField 
+                      variant="outlined"
+                      defaultValue={pet.sexo}
+                      name="sexo"
+                      required
+                      fullWidth
+                      id="Nuevo sexo"
+                      label="Nuevo sexo"
+                      autoFocus
+                    />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <TextField
+                      autoComplete="given-name"
+                      variant="outlined"
+                      defaultValue={pet.descripcion}
+                      name="descripcion"
+                      required
+                      multiline
+                      rows={4}
+                      fullWidth
+                      id=" Nueva Descripción"
+                      label="Nueva Descripción"
+                      autoFocus
+                    />
+                  </Grid>
+
+                </Grid>
+                <div className='buttons'>
+                  <Button 
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    // sx={{ mt: 3, mb: 2 }}
+                    >Actualizar</Button>
+                  <Button
+                    onClick={ () => atras()}
+                    fullWidth
+                    variant="contained"
+                    // sx={{ mt: 3, mb: 2 }}
+                    >Atras
+                  </Button>
+                </div>
             </Box>
           </Box>
         </Container>

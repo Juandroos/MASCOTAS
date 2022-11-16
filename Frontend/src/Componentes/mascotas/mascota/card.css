@@ -1,0 +1,46 @@
+@font-face {
+     font-family: "FredokaOne-Regular";
+     src: url('../../../Font/FredokaOne-Regular.ttf');
+}
+
+.card{
+     align-items: center;
+     cursor:pointer;
+     margin-bottom: 30px;
+     /* transition: background-color .3s ease-in-out; */
+     /* padding-top: 15px; */
+
+     color: rgb(212, 125, 18) ;
+     background:linear-gradient(to right, rgb(212, 125, 18) 50%, rgb(255, 255, 255) 50%) no-repeat right / 200%;
+     /* background:linear-gradient(to right, rgb(212, 125, 18) 50%, rgb(255, 255, 255) 50%) no-repeat right / 200%; */
+     transition: background-position 0.3s ease;
+}
+
+.card:hover{
+     background-position: left;
+     color: white;
+}
+
+.card-img-top{
+     height: 15em;
+     object-fit: cover;
+}
+
+/* .card-body{
+     margin-top: ;
+     width: 100%;
+     font-family: 'FredokaOne-Regular' !important;
+     font-size:1.5rem !important;
+     text-align: center;
+     
+     color: rgb(212, 125, 18) ;
+     background:linear-gradient(to right, rgb(212, 125, 18) 50%, rgb(255, 255, 255) 50%) no-repeat right / 200%;
+     transition: background-position 0.3s ease;
+     
+} */
+
+
+.texto{
+     font-family: 'FredokaOne-Regular';
+     margin-top: 5px;
+}

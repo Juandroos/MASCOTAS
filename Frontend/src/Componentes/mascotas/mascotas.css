@@ -1,0 +1,17 @@
+.container-fluid{
+     padding-right: 15% !important;
+     padding-left: 15% !important;
+}
+
+.starter-template {
+     padding: 3rem 1.5rem;
+}
+
+.info-mascotas{
+     text-align: center;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     font-size: 2rem;
+     margin-bottom: 1rem;
+}
+
+
