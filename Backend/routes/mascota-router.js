@@ -44,7 +44,7 @@ router.put('/actualizar/:id', async (req, res) =>{
           imagen: req.body.imagen,
           fechaActualizacion: new Date()
      }).then(result=>{
-          res.send(result);
+          res.send({mensaje:'Mascota Actualizada con exito'});
           res.end();
      }).catch(error=>{
           res.send(error);

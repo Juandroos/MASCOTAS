@@ -3,6 +3,7 @@ import Navbar from './Componentes/Landingpagina/Navbar';
 import './App.css';
 import Home from './Componentes/pages/Home';
 import Mascotas from './Componentes/pages/Mascotas';
+import MascotasAdmin from './Componentes/mascotas/Mascotas';
 import Misionn from './Componentes/pages/Misionn';
 import SignUp from './Componentes/pages/SignUp';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -29,6 +30,7 @@ function App() {
        <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/mascotas' element={<Mascotas/>} />
+      <Route path='/mascotasAdmin' element={<MascotasAdmin/>} />
       <Route path='/mision' element={<Misionn/>} />
       <Route path='/sign-up' element={<Registro/>}/>
       <Route path='/login' element={<LoginPage/>}/>

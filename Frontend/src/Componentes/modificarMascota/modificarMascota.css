@@ -3,9 +3,35 @@
     background-color: transparent;
     height: 100%;
     width: 100%;
-    background-image: url("../../Fotos/fondo_modificarmascota3.jpg");
+    /* background-image: url("../../Fotos/fondo_modificarmascota3.jpg"); */
     background-repeat:no-repeat;
     background-size: cover;
     background-attachment: fixed;
     
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    width: 25rem;
+}
+
+.buttons button {
+    margin: 0 5px 0 5px;
+}
+
+.fotoPerfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fotoPerfil img{
+    height: 250px;
+    width: 250px;
+    border-radius: 200px;
+    object-position: center;
+    object-fit: cover;
 }
