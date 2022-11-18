@@ -1,4 +1,4 @@
-import React,{ Component }from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -44,45 +44,12 @@ function Copyright(props) {
   );
 }
 
-class LoginPage extends Component{
- 
-  constructor() {
-    super();
-    this.state = {
-      correo:'',
-      contrasenia:''
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.addTask = this.addTask.bind(this);
-  }
+const LoginPage = () => {
+   
 
-  addTask(e){
-    fetch("http://localhost:7777/cliente/login", {
-        method: 'POST',
-        body: JSON.stringify(this.state),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-    })
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .catch(res => console.log(res));
-    e.preventDefault();
-  }
-
-  handleChange(e){
-    const { name, value }= e.target;
-    this.setState({
-      [name]: value
-    });
-  }
- 
- render(){
   return (
-  <div className="containe-fluid div-loginpage" bgcolor="transparent">
+  <div className="containe-fluid div-loginpage" >
     <ThemeProvider theme={theme}>
-      
       <Container component="main" maxWidth="xs">
         <CssBaseline />
        {/* Inicio de caja */}
@@ -97,25 +64,24 @@ class LoginPage extends Component{
           <Typography component="h1" variant="h7">
             Iniciar sesion
           </Typography>
-          <Box component="form" onSubmit={this.addTask} noValidate sx={{ mt: 1 }}>
+          <Box component="form"  noValidate sx={{ mt: 1 }}>
             <TextField 
               margin="normal"
               required
               fullWidth
-              id="email"
+              id="correo"
               bgcolor="white"
               label="Correo electronico"
               name="correo"
-              onChange={this.handleChange}
               autoComplete="email"
               autoFocus
+             
             />
             <TextField
               margin="normal"
               required
               fullWidth
               name="contrasenia"
-              onChange={this.handleChange}
               label="Contraseña"
               type="password"
               id="password"
@@ -153,7 +119,7 @@ class LoginPage extends Component{
     </ThemeProvider>
     </div>
   )
-        }
-}
+};
 
-export default LoginPage;
+        export default LoginPage;
+
