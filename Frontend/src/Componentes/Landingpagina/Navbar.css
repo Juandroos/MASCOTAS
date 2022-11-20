@@ -29,6 +29,13 @@
   align-items: center;
 }
 
+.navbar-logo img{
+  height: 7rem;
+  max-width: auto;
+  /* height: 5rem; */
+  padding: 10px 0 30px 0;
+}
+
 .fa-typo3 {
   margin-left: 0.5rem;
   font-size: 1.8rem;
@@ -47,6 +54,19 @@
 
 .nav-item {
   height: 80px;
+}
+
+.photo-perfil{
+  width: 40px;
+  height: 40px; 
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
 }
 
 .nav-links {
@@ -115,9 +135,16 @@
 
   .navbar-logo {
     position: absolute;
-    top: 0;
+    /* top: 0;
     left: 0;
-    transform: translate(25%, 50%);
+    transform: translate(25%, 50%); */
+  }
+
+  .navbar-logo img{
+    height: auto;
+    max-width: 13rem;
+  /* height: 5rem; */
+  padding: 50px 0 50px 0;
   }
 
   .menu-icon {
