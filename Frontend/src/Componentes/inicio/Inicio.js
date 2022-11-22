@@ -4,7 +4,7 @@ import logo from '../../Fotos/Favicon.png';
 import img from '../../Fotos/Kiara.jpg';
 import pet1 from '../../Fotos/Magnus.jpeg'
 import pet2 from '../../Fotos/Max.png'
-
+import Link from '@mui/material/Link';
 
 const Inicio = () => {
 
@@ -22,11 +22,21 @@ const Inicio = () => {
                 <img src={logo} alt="Logo" className="logo-inicio"/>
                 </div><br/>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item lista-color row"><img src={img} alt="Usuario" className="logo-user"/> Juan</li>
+                    <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./editarInfoPersonal" >
+                    <li class="list-group-item lista-color row"><img src={img} alt="Usuario" className="logo-user"/> Editar perfil</li>
+                    </Link>
+                    <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./inicio" >
                     <li class="list-group-item lista-color"><i class="fa-solid fa-house-chimney font-icon"></i> Inicio </li>
+                    </Link>
+                    <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./nuevaActividad">
                     <li class="list-group-item lista-color"><i class="fa-solid fa-hashtag font-icon"></i> Actividades</li>
+                    </Link>
+                    <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./informacionPersonal" >
                     <li class="list-group-item lista-color"><i class="fa-regular fa-user font-icon"></i>Perfil</li>
+                    </Link>
+                    <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./historial" >
                     <li class="list-group-item lista-color"><i class="fa-solid fa-paw font-icon"></i>Adopciones</li>
+                    </Link>
                     <li class="list-group-item lista-color"><i class="fa-solid fa-question font-icon"></i>Preguntas</li>
                     <li class="list-group-item lista-color"><i class="fa-solid fa-info font-icon"></i>Informacion</li>
                     <button Style="background-color: transparent; text-align: left;" onClick={ () => onExit()}>
