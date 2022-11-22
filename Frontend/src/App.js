@@ -23,6 +23,7 @@ import ModificarActividad from './Componentes/modificarActividad/ModificarActivi
 import ColaboradorLista from './Componentes/colaboradoresLista/ColaboradoresLista';
 import ColaboradorBuscar from './Componentes/colaboradorBuscar/ColaboradorBuscar'
 import NotasList from './Componentes/entrenamiento/NotasList'
+import Actss from './Componentes/pages/Actss';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
             <Route path='/colaboradorLista' element ={<ColaboradorLista/>}/>
             <Route path='/colaboradorBuscar' element ={<ColaboradorBuscar/>}/>
             <Route path='/Entrenamiento' element ={<NotasList/>}/>
+            <Route path='/Actsss' element ={<Actss/>}/>
           </Routes>
         </Router>
       </>
