@@ -22,6 +22,7 @@ import ModificarMascota from './Componentes/modificarMascota/ModificarMascota';
 import ModificarActividad from './Componentes/modificarActividad/ModificarActividad';
 import ColaboradorLista from './Componentes/colaboradoresLista/ColaboradoresLista';
 import ColaboradorBuscar from './Componentes/colaboradorBuscar/ColaboradorBuscar'
+import NotasList from './Componentes/entrenamiento/NotasList'
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route path='/modificarmascota' element ={<ModificarMascota/>}/>
             <Route path='/colaboradorLista' element ={<ColaboradorLista/>}/>
             <Route path='/colaboradorBuscar' element ={<ColaboradorBuscar/>}/>
+            <Route path='/Entrenamiento' element ={<NotasList/>}/>
           </Routes>
         </Router>
       </>
