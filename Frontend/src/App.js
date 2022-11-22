@@ -25,34 +25,32 @@ import ColaboradorBuscar from './Componentes/colaboradorBuscar/ColaboradorBuscar
 
 function App() {
   return (
-    <>
-      <Router>
-       <Navbar />
-       
-       <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/mascotas' element={<Mascotas/>} />
-      <Route path='/mascotasAdmin' element={<MascotasAdmin/>} />
-      <Route path='/mision' element={<Misionn/>} />
-      <Route path='/sign-up' element={<Registro/>}/>
-      <Route path='/login' element={<LoginPage/>}/>
-      <Route path='/changepassword' element={<ChangePassword/>}/>
-      <Route path='/confirmacion' element={<Confirmacion/>}/>
-      <Route path='/historial' element={<Historial/>}/>
-      <Route path='/cambiarContrasena' element={<CambiarContrasena/>}/>
-      <Route path='/inicio' element={<Inicio/>}/>
-      <Route path='/informacionPersonal' element ={<InformacionPersonal/>}/>
-      <Route path='/editarInfoPersonal' element ={<EditarInfoPersonal/>}/>
-      <Route path='/nuevamascota' element ={<Nuevamascota/>}/>      
-      <Route path='/nuevaActividad' element ={<NuevaActividad/>}/>
-      <Route path='/modificaractividad' element ={<ModificarActividad/>}/>
-      <Route path='/modificarmascota' element ={<ModificarMascota/>}/>
-      <Route path='/colaboradorLista' element ={<ColaboradorLista/>}/>
-      <Route path='/colaboradorBuscar' element ={<ColaboradorBuscar/>}/>
-       </Routes>
-      </Router>
-
-    </>
+      <>
+        <Router>
+        <Navbar />
+          <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path='/mascotas' element={<Mascotas/>} />
+            <Route path='/mascotasAdmin' element={<MascotasAdmin/>} />
+            <Route path='/mision' element={<Misionn/>} />
+            <Route path='/sign-up' element={<Registro/>}/>
+            <Route path='/login' element={<LoginPage/>}/>
+            <Route path='/changepassword' element={<ChangePassword/>}/>
+            <Route path='/confirmacion' element={<Confirmacion/>}/>
+            <Route path='/historial' element={<Historial/>}/>
+            <Route path='/cambiarContrasena' element={<CambiarContrasena/>}/>
+            <Route path='/inicio' element={<Inicio/>}/>
+            <Route path='/informacionPersonal' element ={<InformacionPersonal/>}/>
+            <Route path='/editarInfoPersonal' element ={<EditarInfoPersonal/>}/>
+            <Route path='/nuevamascota' element ={<Nuevamascota/>}/>      
+            <Route path='/nuevaActividad' element ={<NuevaActividad/>}/>
+            <Route path='/modificaractividad' element ={<ModificarActividad/>}/>
+            <Route path='/modificarmascota' element ={<ModificarMascota/>}/>
+            <Route path='/colaboradorLista' element ={<ColaboradorLista/>}/>
+            <Route path='/colaboradorBuscar' element ={<ColaboradorBuscar/>}/>
+          </Routes>
+        </Router>
+      </>
   );
 }
 

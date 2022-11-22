@@ -1,14 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-
 import logo from  '../../Fotos/Logo_2.png'
 import foto from  '../../Fotos/user.png'
+// import UserContext from '../../state/user/UserContext';
 
 function Navbar() {
+  useEffect(() => {
+    userLS();
+    showButton();
+  }, []);
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [userName, setuserName] = useState();
+  
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -21,9 +28,26 @@ function Navbar() {
     }
   };
 
-  useEffect(() => {
-    showButton();
-  }, []);
+  // const { user, getUser } = useContext(UserContext)
+
+  const loadUser = () =>{
+    // console.log()
+    if (localStorage.getItem('user') == null){window.location.href = "./login";}
+    if (localStorage.getItem('user') != null){window.location.href = "./inicio";}
+  }
+
+  const userLS = () => {
+    // console.log('navbar')
+    if (localStorage.getItem('user') == null){
+      setuserName('Usuario')
+      // console.log(userActual.nombre)
+    }else {
+      const userActual = JSON.parse(localStorage.getItem('user'));
+      setuserName(userActual.nombre)
+    }
+  }
+  
+
 
   window.addEventListener('resize', showButton);
 
@@ -63,47 +87,17 @@ function Navbar() {
                 Nosotros
               </Link>
             </li>
-
-            {/* <li className='nav-item'>
-              <Link
-                to='/inicio'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >Usuario</Link>
-            </li> */}
-
             <li className='nav-item user'>
               <Link
-                to='/login'
+                // to='/login'
                 className='nav-links'
-                onClick={closeMobileMenu}
+                onClick={ () => loadUser()}
               >
-                <img src={foto} className='photo-perfil'></img>
-                Usuario
+                <img src={ foto} className='photo-perfil'></img>
+                {userName}
               </Link>
             </li>
-
-            {/* <li class="nav-item dropdown">
-              <a class="nav-links dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Usuario
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/login">Iniciar Sesion</a></li>
-                <li><a class="dropdown-item" href="/sign-up">Registrarme</a></li>
-              </ul>
-            </li> */}
-
-            {/* <li className='nav-item'>
-              <Link
-                to='/registro'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                prueba
-              </Link>
-            </li> */}
           </ul>
-          {/* {<Link to ='/sign-up' ><button className='btn-mobile' buttonStyle='btn--outline'>REGISTRARSE</button></Link>} */}
         </div>
       </nav>
     </>

@@ -1,11 +1,18 @@
-import React from "react"
+import React,{ useContext }from 'react';
 import "./inicio.css"
 import logo from '../../Fotos/Favicon.png';
 import img from '../../Fotos/Kiara.jpg';
 import pet1 from '../../Fotos/Magnus.jpeg'
 import pet2 from '../../Fotos/Max.png'
 
+
 const Inicio = () => {
+
+    const onExit = () =>{
+        localStorage.clear();
+        window.location.href = "./";
+    }
+
     return(
         
         <div className="containe-fluid div-inicio">
@@ -22,6 +29,9 @@ const Inicio = () => {
                     <li class="list-group-item lista-color"><i class="fa-solid fa-paw font-icon"></i>Adopciones</li>
                     <li class="list-group-item lista-color"><i class="fa-solid fa-question font-icon"></i>Preguntas</li>
                     <li class="list-group-item lista-color"><i class="fa-solid fa-info font-icon"></i>Informacion</li>
+                    <button Style="background-color: transparent; text-align: left;" onClick={ () => onExit()}>
+                        <li class="list-group-item lista-color"><i class="fa-solid fa-right-from-bracket font-icon"></i>Cerrar Sesion</li>
+                    </button>
                 </ul>
                 </div>
                 <div className="col-6 div-center">
@@ -76,10 +86,7 @@ const Inicio = () => {
                 </ul>
                 </div>
             </div>
-            
         </div>
-         
-        
     )
 }
 
