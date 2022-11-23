@@ -25,6 +25,7 @@ import ColaboradorBuscar from './Componentes/colaboradorBuscar/ColaboradorBuscar
 import NotasList from './Componentes/entrenamiento/NotasList'
 import Actss from './Componentes/pages/Actss';
 import Desaparecidoss from './Componentes/pages/Desaparecidoss';
+import Questions from './Componentes/pages/Questions'
 
 function App() {
   return (
@@ -54,6 +55,8 @@ function App() {
             <Route path='/Entrenamiento' element ={<NotasList/>}/>
             <Route path='/Actsss' element ={<Actss/>}/>
             <Route path='/desaparecidos' element ={<Desaparecidoss/>}/>
+            <Route path='/preguntas' element ={<Questions/>}/>
+
           </Routes>
         </Router>
       </>
