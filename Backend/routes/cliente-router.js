@@ -40,7 +40,6 @@ router.post('/register', async (req, res)=>{
             res.end();
         })
     } 
-       
 })
 
 
@@ -48,9 +47,9 @@ router.post('/register', async (req, res)=>{
 router.post('/login', async (req, res) => {
     const { correo, contrasenia } = req.body;                                                               // Obteniendo datos del body
     const user = await cliente.findOne({correo: correo})                                                           // Buscando usuario en la base de datos
-    if(!user) return res.status(401).send('Usuario no encontrado');
-    if(user.contrasenia !== contrasenia) return res.status(401).send('Contraseña incorrecta');
-    return res.status(200).json(user);
+    if(!user) return res.status(401).send('Usuario y/o Contraseña incorrectos');
+    if(user.contrasenia !== contrasenia) return res.status(401).send('Usuario y/o Contraseña incorrectos');
+    return res.status(200).json(user.id);
 });
 
 
@@ -76,19 +75,33 @@ router.put('/changePassword', async (req, res) =>{
 })
 
 //GET - Obtener informacion cliente
-router.get('/informacionPersonal/:id', async (req, res) =>{
-    await cliente.find({_id: req.params.id}).then(result=>{
+router.get('/:id', async (req, res) =>{
+    await cliente.find(
+        {
+            _id: req.params.id
+        },
+        {
+            nombre:true,
+            identidad:true,
+            direccion:true,
+            sexo:true,
+            fechaNacimiento:true,
+            celular:true,
+            telefono:true,
+            correo:true,
+            fotoPerfil:true
+        }
+    ).then(result=>{
         res.send(result);
         res.end();
     }).catch(error=>{
         res.send(error);
         res.end();
     })
-
-})
+});
 
 //PUT - Actualizar informacion cliente
-router.put('/editarInfoPersonal/:id', async (req, res) =>{
+router.put('/actualizar/:id', async (req, res) =>{
     await cliente.updateOne({
         _id: req.params.id
     },
@@ -100,6 +113,7 @@ router.put('/editarInfoPersonal/:id', async (req, res) =>{
         celular: req.body.celular,
         telefono: req.body.telefono,
         correo: req.body.correo,
+        fotoPerfil: req.body.fotoPerfil,
         modificacion: new Date()
     }).then(result=>{
         res.send(result);
