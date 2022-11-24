@@ -92,7 +92,7 @@ router.get('/:id', async (req, res) =>{
             fotoPerfil:true
         }
     ).then(result=>{
-        res.send(result);
+        res.send(result[0]);
         res.end();
     }).catch(error=>{
         res.send(error);

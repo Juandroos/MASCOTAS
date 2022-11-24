@@ -1,0 +1,89 @@
+.fondo {
+     background: white;
+}
+
+.flex {
+     display: flex;
+     padding-top: 20px;
+     margin: 0px 20% 0 20%;
+     /* background-color: white; */
+}
+
+.menu{
+     width: 14rem;
+     height: calc(100vh - 52px);
+     border-right: 1px solid gray !important;
+     /* background-color: blueviolet; */
+}
+
+.fotoPerfil img{
+     width: 150px;
+     height: 150px;
+}
+
+.nav-item {
+     margin: 0 !important;
+     padding: 0 !important;
+}
+
+.nav li {
+     height: 40px;
+}
+
+.option{
+     /* background-color: transparent; */
+     display: flex;
+     align-items: center;
+     font-size: 20px;
+     text-align: left;
+     color: rgb(0, 0, 0);
+}
+
+.option p{
+     margin: 0;
+}
+
+.option:hover {
+     color: orange;
+}
+
+
+
+
+
+
+@media screen and (max-width: 960px) {
+     .flex {margin: 20px 2% 0 2%;}
+     .menu{width: 11rem;}
+     .option{font-size: 16px;}
+}
+
+@media screen and (max-width: 400px) {
+
+     .menu{
+          width: 5rem;
+          display: flex;
+          justify-content: center;
+     }
+
+     .flex {margin: 20px 2px 0 2px;}
+
+     .fotoPerfil img{
+          width: 75px;
+          height: 75px;
+     }
+
+     .option p{display: none;}
+
+     .option i{
+          font-size: 30px;
+          text-align: center;
+     }
+
+     .fa-solid, fa-regular, fa-right-from-bracket, font-icon{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+     }
+}

@@ -1,0 +1,61 @@
+.btn-color{
+     background-color: orange !important;
+     color: black !important;
+}
+
+.buttons{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     padding: 10px;
+     width: 25rem;
+}
+
+.buttons button {
+     margin: 0 5px 0 5px;
+}
+
+.titulo{
+     font-size: 25px;
+}
+
+.fotoPerfil img{
+     height: 250px;
+     width: 250px;
+     border-radius: 200px;
+     object-position: center;
+     object-fit: cover;
+}
+
+
+
+@media screen and (max-width: 400px) {
+     .div-perfil{
+          width: 100px;
+          align-items: center;
+          margin-left: 100px !important;
+     }
+
+     .textField{
+          width: 250px !important;
+          /* margin-left: 100%; */
+     }
+
+     .fotoPerfil img{
+          height: 100px;
+          width: 100px;
+          border-radius: 200px;
+          object-position: center;
+          object-fit: cover;
+     }
+
+     .buttons{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 10px;
+          margin: 10px;
+          width: 300px;
+     }
+     
+}

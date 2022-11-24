@@ -36,7 +36,7 @@ function Navbar() {
   // Redireccionar dependiendo si el usuario esta o no logeado
   const loadUser = () =>{
     if (userName == null){window.location.href = "./login";}
-    if (userName != null){window.location.href = "./inicio";}
+    if (userName != null){window.location.href = "./usuario";}
   }
 
   const userLS = () => {
@@ -52,8 +52,8 @@ function Navbar() {
     })
       .then(res => res.json())
       .then(data => {
-          setuserName(data[0].nombre)
-          setfotoPerfil(data[0].fotoPerfil)
+          setuserName(data.nombre)
+          setfotoPerfil(data.fotoPerfil)
           // console.log(data[0].fotoPerfil)
       })
       .catch(res => console.log(res));
