@@ -27,6 +27,8 @@ import Actss from './Componentes/pages/Actss';
 import Desaparecidoss from './Componentes/pages/Desaparecidoss';
 import Questions from './Componentes/pages/Questions'
 import Usuario from './Componentes/usuario/Usuario'
+import Ap from './Componentes/pages/Ap'
+import WSPGallery from './Componentes/Listadovet/WSPGallery';
 
 function App() {
   return (
@@ -58,6 +60,8 @@ function App() {
             <Route path='/desaparecidos' element ={<Desaparecidoss/>}/>
             <Route path='/preguntas' element ={<Questions/>}/>
             <Route path='/usuario' element ={<Usuario/>}/>
+            <Route path='/listadoveterinarios' element ={<Ap/>}/>
+
           </Routes>
       </Router>
     </>

@@ -59,6 +59,13 @@ export default function ControlledAccordions() {
   ];
 
   return (
+
+    <div className="container App">
+
+    <br /><br />
+    <h2>PREGUNTAS FRECUENTES</h2>
+    <br /><br />
+
     <div className={classes.root}>
       {data.map(accordion => {
         const { id, heading, secondaryHeading, details } = accordion;
@@ -85,6 +92,7 @@ export default function ControlledAccordions() {
           </Accordion>
         );
       })}
+    </div>
     </div>
   );
 }
