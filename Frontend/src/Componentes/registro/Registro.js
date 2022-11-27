@@ -11,11 +11,11 @@ const Registro = () => {
         identidad:"",
         direccion:"",
         sexo:"",
-        fNacimiento:"",
+        fechaNacimiento:"",
         celular:"",
-        telFijo:"",
-        correoElectronico:"",
-        password:""
+        telefono:"",
+        correo:"",
+        contrasenia:""
     });  
 
     const handleChange = e =>{
@@ -26,17 +26,40 @@ const Registro = () => {
         })
     }
 
-    const url ="http://localhost:9002/"
-    const registro = () =>{
-        const {nombre, identidad, direccion, sexo, fNacimiento, celular, telFijo, correoElectronico, password} = usuario
-        
-        if( nombre &&  identidad && direccion && sexo && fNacimiento && celular && correoElectronico && password){
-            console.log("Enviada")
-            // axios.post(url+"registro", usuario).then(res=> console.log(res))
-        }else{
-            console.log("La informacion no es valida")
+
+
+    const handleSubmit = (event) => {
+        const data = new FormData(event.currentTarget);
+        const mascota = {
+          nombre: data.get('nombre'),
+          identidad: data.get('identidad'),
+          sexo: data.get('sexo'),
+          fechaNacimiento: data.get('fechaNacimiento'),
+          celular: data.get('celular'),
+          telefono: data.get('telefono'),
+          correo: data.get('correo'),
+          contrasenia: data.get('contrasenia')
         }
-    }
+        // console.log(mascota)
+        
+        fetch("http://localhost:7777/cliente/register", {
+          method: 'POST',
+          body: JSON.stringify(mascota),
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+          })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          alert(data.mensaje)
+          window.location.href = "./sign-up"; 
+        })
+        .catch(res => console.log(res));
+        event.preventDefault();
+      };
+
 
 
     return (
@@ -96,7 +119,7 @@ const Registro = () => {
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> *</abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="fNacimiento" value={usuario.fNacimiento} type="date" className="form-control input-registro" id="fNacimiento"  onChange={ handleChange }></input>
+                                <input name="fNacimiento" value={usuario.fechaNacimiento} type="date" className="form-control input-registro" id="fNacimiento"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
@@ -112,7 +135,7 @@ const Registro = () => {
                         <div className="mb-4 row">
                             <label htmlFor="telFijo" className="col-sm-4 col-form-label fw-bolder">Telefono Fijo:</label>
                             <div className="col-sm-8">
-                                <input name="telFijo" value={usuario.telFijo} type="text" className="form-control input-registro" id="telFijo" placeholder="2244-6567"  onChange={ handleChange }></input>
+                                <input name="telFijo" value={usuario.telefono} type="text" className="form-control input-registro" id="telFijo" placeholder="2244-6567"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
@@ -121,7 +144,7 @@ const Registro = () => {
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> *</abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="correoElectronico" value={usuario.correoElectronico} type="text" className="form-control input-registro" id="correoElectronico" placeholder="juan@correo.com"  onChange={ handleChange }></input>
+                                <input name="correoElectronico" value={usuario.correo} type="text" className="form-control input-registro" id="correoElectronico" placeholder="juan@correo.com"  onChange={ handleChange }></input>
                             </div>
                         </div>
 
@@ -130,7 +153,7 @@ const Registro = () => {
                                 <abbr title="Campo obligatorio" className="abbr-obligatoria"> *</abbr>
                             </label>
                             <div className="col-sm-8">
-                                <input name="password" value={usuario.password} type="password" className="form-control input-registro" id="password" placeholder="Alf4bet0-" onChange={ handleChange }></input>
+                                <input name="password" value={usuario.contrasenia} type="password" className="form-control input-registro" id="password" placeholder="Alf4bet0-" onChange={ handleChange }></input>
                             </div>
                         </div>
 
@@ -139,7 +162,7 @@ const Registro = () => {
                             <a href="home"> CONDICIONES GENERALES DE USO</a> y la <a href="home">POLÍTICA DE PRIVACIDAD</a></div>
                             {/* <button className="btn btn-lg btn-success mt-4 col-6 button-registro" onClick={registro}>Regístrate</button> */}
                             
-                            <button className="btn btn-lg btn-success mt-4 col-6 button-registro" onClick={registro}>Regístrate</button> 
+                            <button className="btn btn-lg btn-success mt-4 col-6 button-registro" onSubmit={handleSubmit}>Regístrate</button> 
                         </div>
 
                     </form>
