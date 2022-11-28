@@ -22,12 +22,12 @@ import ModificarMascota from './Componentes/modificarMascota/ModificarMascota';
 import ModificarActividad from './Componentes/modificarActividad/ModificarActividad';
 import ColaboradorLista from './Componentes/colaboradoresLista/ColaboradoresLista';
 import ColaboradorBuscar from './Componentes/colaboradorBuscar/ColaboradorBuscar'
-import NotasList from './Componentes/entrenamiento/NotasList'
 import Actss from './Componentes/pages/Actss';
 import Desaparecidoss from './Componentes/pages/Desaparecidoss';
 import Questions from './Componentes/pages/Questions'
 import Usuario from './Componentes/usuario/Usuario'
 import Ap from './Componentes/pages/Ap'
+import Ejecutar from './Componentes/Entrenamiento/Ejecutar';
 import WSPGallery from './Componentes/Listadovet/WSPGallery';
 
 function App() {
@@ -55,12 +55,12 @@ function App() {
             <Route path='/modificarmascota' element ={<ModificarMascota/>}/>
             <Route path='/colaboradorLista' element ={<ColaboradorLista/>}/>
             <Route path='/colaboradorBuscar' element ={<ColaboradorBuscar/>}/>
-            <Route path='/Entrenamiento' element ={<NotasList/>}/>
             <Route path='/Actsss' element ={<Actss/>}/>
             <Route path='/desaparecidos' element ={<Desaparecidoss/>}/>
             <Route path='/preguntas' element ={<Questions/>}/>
             <Route path='/usuario' element ={<Usuario/>}/>
             <Route path='/listadoveterinarios' element ={<Ap/>}/>
+            <Route path='/Entrenamiento' element ={<Ejecutar/>}/>
 
           </Routes>
       </Router>

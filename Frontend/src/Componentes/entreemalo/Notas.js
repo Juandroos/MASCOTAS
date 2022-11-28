@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import NotasForm from './NotasForm';
+import NotasForm from '../entrenamiento/NotasForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
-const Notas = ({ Notass, completeNotas, removeNotas, updateNotas }) => {
+const Notas = ({ Notass, completeNotas, removeNotas, updateNotas }) => {  
   const [edit, setEdit] = useState({
     id: null,
     value: ''

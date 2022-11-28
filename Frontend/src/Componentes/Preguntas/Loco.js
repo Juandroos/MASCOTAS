@@ -7,6 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 
+import './Style.css';
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%"

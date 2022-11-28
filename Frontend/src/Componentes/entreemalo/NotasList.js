@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import NotasForm from './NotasForm';
-import Notas from './Notas';
+import Notas from '../entreemalo/Notas';
 import notas from './notas.css';
 
 
 
 
 function NotasList() {
-  const [Notass, setNotass] = useState([]);
+  const [Notass, setNotass] = useState([
+    {id: 1, title: "HOLA", status: false},
+    {id:2,title:"HOLA",status:false},
+    {id:3},
+    {id:4},
+    {id:5},
+    {id:6}
+
+  ]);
 
   const addNotas = Notas => {
     if (!Notas.text || /^\s*$/.test(Notas.text)) {

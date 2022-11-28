@@ -37,7 +37,9 @@ const Inicio = () => {
                     <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./historial" >
                     <li class="list-group-item lista-color"><i class="fa-solid fa-paw font-icon"></i>Adopciones</li>
                     </Link>
+                    <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./preguntas" >
                     <li class="list-group-item lista-color"><i class="fa-solid fa-question font-icon"></i>Preguntas</li>
+                    </Link>
                     <li class="list-group-item lista-color"><i class="fa-solid fa-info font-icon"></i>Informacion</li>
                     <button Style="background-color: transparent; text-align: left;" onClick={ () => onExit()}>
                         <li class="list-group-item lista-color"><i class="fa-solid fa-right-from-bracket font-icon"></i>Cerrar Sesion</li>
@@ -73,7 +75,9 @@ const Inicio = () => {
 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item lista-act">Entrenamiento 
+                        <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./entrenamiento" >
                         <p className="card-text"><small className="text-muted">Que hacer con nuestro nuevo amigo.</small></p>
+                        </Link>
                     </li>
                     <li class="list-group-item lista-act">Alimentacion
                         <p className="card-text"><small className="text-muted">Alimentos recomendados</small></p>
@@ -84,14 +88,20 @@ const Inicio = () => {
                     <li class="list-group-item lista-act">Adopciones
                         <p className="card-text"><small className="text-muted">Beneficios de adoptar</small></p>
                     </li>
-                    <li class="list-group-item lista-act">Foto
+                    <li class="list-group-item lista-act">Fotos Actividades Realizadas
+                        <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./Actsss" >
                         <p className="card-text"><small className="text-muted">Ven y sumate a nuestro programa</small></p>
+                        </Link>
                     </li>
                     <li class="list-group-item lista-act">Veterinarios
-                        <p className="card-text"><small className="text-muted">Ven a escuchar al Veterinario Garcia hablar...</small></p>
+                        <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./listadoveterinarios" >
+                        <p className="card-text"><small className="text-muted">Listado de veterinarios...</small></p>
+                        </Link>
                     </li>
-                    <li class="list-group-item lista-act">Infancia
-                        <p className="card-text"><small className="text-muted">Dos mundos, un ambiente.</small></p>
+                    <li class="list-group-item lista-act">Desaparecidos
+                        <Link Style="background-color: transparent; text-align: left; text-decoration:none;" href="./desaparecidos" >
+                        <p className="card-text"><small className="text-muted">Mascotas desaparecidas.</small></p>
+                        </Link>
                     </li>
                 </ul>
                 </div>
